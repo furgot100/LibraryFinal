@@ -1,0 +1,17 @@
+{
+  "name": "libraryfinal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@furgot100/dates-lib": "^1.0.0"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
