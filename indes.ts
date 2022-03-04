@@ -2,10 +2,10 @@
 const D = require('@furgot100/dates-lib');
 const data = require('./data.json');
 
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const months: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-function isEmpty(str) {
-  const words = str.trim().split('');
+function isEmpty(str:string): boolean {
+  const words:string[] = str.trim().split('');
   for (let i = 0; i < words.length; i += 1) {
     if (words[i] !== ('\n' || '\r' || '\t')) {
       return false;
@@ -14,27 +14,27 @@ function isEmpty(str) {
   return true;
 }
 
-function upperCase(str) {
+function upperCase(str:string):string {
   if (isEmpty(str) === true) {
     return '';
   }
-  const strEndSlice = str.slice(1);
-  const firstLetter = str[0].toUpperCase();
+  const strEndSlice:string = str.slice(1);
+  const firstLetter:string = str[0].toUpperCase();
   return firstLetter + strEndSlice;
 }
 
-function formatNumber(phoneNumber) {
+function formatNumber(phoneNumber:string):string {
   if (isEmpty(phoneNumber) === true) {
     return 'No phone number on file';
   }
-  const areaCode = phoneNumber.slice(0, 3);
-  const middle = phoneNumber.slice(3, 6);
-  const end = phoneNumber.slice(6);
+  const areaCode:string = phoneNumber.slice(0, 3);
+  const middle:string = phoneNumber.slice(3, 6);
+  const end:string = phoneNumber.slice(6);
   return `(${areaCode})${middle}-${end}`;
 }
 
 function Data() {
-  for (let i = 0; i < data.length; i += 1) {
+  for (let i:number = 0; i < data.length; i += 1) {
     // Name
     console.log(`${upperCase(data[i].first_name)} ${upperCase(data[i].last_name)}`);
     // Car Model
